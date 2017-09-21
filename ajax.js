@@ -22,7 +22,7 @@ var ajax = {
 
         xml.onreadystatechange = function () {
             if (xml.readyState === 4 && xml.status === 200 || xml.status === 304) {
-                successfn.call(this, xml.responseText);
+                successfn.call(this, JSON.parse(xml.responseText));
             }
         }
         xml.send(JSON.stringify(data));
